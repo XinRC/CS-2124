@@ -405,12 +405,14 @@ int main(){
 
 ---
 
-### Storage -> Vectors and Arrays
+### Vectors and Arrays
 
-Vectors can *only* hold integers. They are similar to python's list. 
-Local Arrays: 
+- In C++, vectors is similar to python's lists - it is an resizable array. C++'s arrays on the other hand is nonresizable. Generally speaking, vectors is used more often.
+- Every item in the vectors/arrays must have the same datatype.
+- To use vectors, you must `#include <vector>`
 
-- Can only hold intgers and they are fixed size. Generally speaking, vectors are much easier to use.
+> [!WARNING]
+> [Link](https://cplusplus.com/doc/tutorial/arrays/) Still needs to be completed.
 
 --- 
 
