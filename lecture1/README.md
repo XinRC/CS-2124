@@ -435,7 +435,7 @@ int main(){
 | foo\[1\] = 2; | Giving the index 1 of the array the value of "2" |
 | x = foo\[1\] | Gives the variable "x" the value of the item at index 1 |
 
-Do note that for regular arrays, the vector methods does not work on it - for example you cannot use `.pop_back()`. 
+Do note that for built-in arrays, the vector methods does not work on it - for example you cannot use `.pop_back()`. 
 
 </div>
 
