@@ -419,7 +419,7 @@ int main(){
 
 | Method Name | Explaination |
 | :---: | :--- |  
-| std::vector<int> vector_name; | Declares an empty vector of integers, with `vector_name(#)` will provide us the inital size | 
+| vector<data_type> vector_name; = {}| Declares an empty vector of integers, with `vector_name(#)` will provide us the inital size | 
 | vector_name.push_back(#); | Adds an element to the end of the vector | 
 | vector_name.pop_back(); | Removes the last element from the vector | 
 
