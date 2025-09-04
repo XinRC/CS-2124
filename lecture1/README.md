@@ -135,6 +135,8 @@ int main(){
 | ++ | increment by 1 |
 | -- | decrement by 1 | 
 
+<sub>Do note ++x and x++ is different, `++x` is to increment first and then use the x value while `x++` is to use the x value first and then increment.</sub>
+
 </div>
 
 </br>
