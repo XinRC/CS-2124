@@ -412,19 +412,30 @@ int main(){
 - To use vectors, you must `#include <vector>`
 
 **Methods of Vectors**
+
+<div align = "center">
+
 | Method Name | Explaination |
 | :---: | :--- |  
 | std::vector<int> vector_name; | Declares an empty vector of integers, with `vector_name(#)` will provide us the inital size | 
 | vector_name.push_back(#); | Adds an element to the end of the vector | 
 | vector_name.pop_back(); | Removes the last element from the vector | 
 
+</div>
 
 **Methods of Arrays**
+
+<div align = "center">
+  
 | Method Name | Explaination |
 | :---: | :--- |
 | int foo \[2\] = {2, 5};| Initialization of the array with a length of 2 and array name of "foo" |
 | foo\[1\] = 2; | Giving the index 1 of the array the value of "2" |
 | x = foo\[1\] | Gives the variable "x" the value of the item at index 1 |
+
+Do note that for regular arrays, the vector methods does not work on it - for example you cannot use `.pop_back()`. 
+
+</div>
 
 --- 
 
