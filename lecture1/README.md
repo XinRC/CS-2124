@@ -411,12 +411,26 @@ int main(){
 - Every item in the vectors/arrays must have the same datatype.
 - To use vectors, you must `#include <vector>`
 
-> [!WARNING]
-> [Link](https://cplusplus.com/doc/tutorial/arrays/) Still needs to be completed.
+**Methods of Vectors**
+| Method Name | Explaination |
+| :---: | :--- |  
+| std::vector<int> vector_name; | Declares an empty vector of integers, with `vector_name(#)` will provide us the inital size | 
+| vector_name.push_back(#); | Adds an element to the end of the vector | 
+| vector_name.pop_back(); | Removes the last element from the vector | 
+
+
+**Methods of Arrays**
+| Method Name | Explaination |
+| :---: | :--- |
+| int foo \[2\] = {2, 5};| Initialization of the array with a length of 2 and array name of "foo" |
+| foo\[1\] = 2; | Giving the index 1 of the array the value of "2" |
+| x = foo\[1\] | Gives the variable "x" the value of the item at index 1 |
 
 --- 
 
 ### Multidimensional Arrays 
+
+Multidimensional arrays is very similar to python's multidimensional arrays. Given an array `int shelf`, you can retrieve information using `int shelf \[4\]\[5\]\[2\], but do note that with more dimensions, the more amount of dimension is needed. 
 
 ---
 
