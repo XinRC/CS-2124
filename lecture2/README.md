@@ -1,7 +1,7 @@
 <div align = "center">
 
 # Lecture 2
-## 
+## Functions, Classes, and Parameters
 
 </div>
 
