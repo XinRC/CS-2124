@@ -19,7 +19,8 @@ Objectives:
 - constructor??
 - using "&" symbol = result of that??
 - rhs meaning ->
-- nested classes 
+- nested classes
+- "friend" creating method?
 
 
 ```C++
