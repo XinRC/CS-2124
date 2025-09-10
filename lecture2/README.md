@@ -5,16 +5,6 @@
 
 </div>
 
->[!Important]
-> Objectives -> have not yet put into this readme file:
-> - Struct / Class
->     - struct is a public
->     - class is private
-> - "setter"
-> - rhs meaning ->
-> - nested classes
-> - "friend" creating method?
-
 ### Functions
 Functions behave the same way they do in python. For every function, you must write what the datatype being returned is, and if there is nothing to be returned, then the "datatype" would be `void`. Similarly, to initialize parameters, the datatype for the variable and data must be made clear. To provide a default variable data information, you can type the datatype, the variable name, then value within the parameters: `int slicesOfPizza = 8`. Another thing to note is the scopes of variables, when you define a variable within a function, the variable is **only** accessible from within that function, if you attempt to call it elsewhere, it will not work. 
 
@@ -102,23 +92,32 @@ One done, be sure to use curly brackets followed by a semicolon. Class declarati
 
 ```C++
 class Employee{
-public: // makes the data below public to call/access
-    // Creating the class attributes:
-    string em_name;
-    string em_department;
-    int em_id_number;
-    
-
-    // Creating methods:
-    void EmployeeInfo() {
-        cout << em_name << "'s ID is: " << em_id_number << " and they are in the " << em_department << " department." << endl;
-    }
+public: // makes the data below public to call/access  
 
     // Creating a constructor:
     Employee(string name, string department, int id_number){
         name = name;
         department = department;
         id_number = id_number
+
+        /* Another way of initializing constructor:
+        : name = (name), department = (department), id_number  = (id_number) {};
+        */
+    }
+
+    // Setter function -> enables us to change the name after creation
+    void setInformation(string name, string department, int id_number){
+        // Creating the class attributes:
+        string em_name;
+        string em_department;
+        int em_id_number;
+    }
+
+    // Creating methods:
+    void EmployeeInfo() {
+        cout << em_name << "'s ID is: " << em_id_number << " and they are in the " << em_department << " department." << endl;
+    }
+
     }
 };
 
@@ -137,8 +136,3 @@ int main(){
     employee2.EmployeeInfo();
 }
 ```
-
-
->[!Note]
-> This is in the process of construction. For now, if you still need OOP assistance use [this link.](https://www.youtube.com/watch?v=wN0x9eZLix4)
-
