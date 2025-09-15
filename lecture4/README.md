@@ -6,8 +6,8 @@
 </div> 
 
 > [!Important]
-> Vectors
-> Referencing
+> - Vectors
+> - Referencing
 
 
 ### Ways to Initialize a Vector:
