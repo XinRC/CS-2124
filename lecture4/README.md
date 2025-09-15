@@ -1,7 +1,7 @@
 <div align = "center">
 
 # Lecture 4
-## Vector, Referencing
+## Vectors and References
 
 </div> 
 
