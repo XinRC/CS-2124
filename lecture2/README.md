@@ -101,7 +101,7 @@ public: // makes the data below public to call/access
         id_number = id_number
 
         /* Another way of initializing constructor:
-        : name = (name), department = (department), id_number  = (id_number) {};
+         name = (name), department = (department), id_number  = (id_number) {};
         */
     }
 
