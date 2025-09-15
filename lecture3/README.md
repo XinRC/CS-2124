@@ -5,13 +5,6 @@
 
 </div>
 
-> [!Important]
->  - Encapsulation, Data Hidin
->      - Struct
->      - Const methods
->      - Overloading output operator
-
-
 ### Structures:
 Structures and classes are very similar - the only difference being that structures are by default, public, while classes by default, are private. However, structures can also be defined as private if necessary. Like classes, structures can have private/public/protected attributes, constructors, and methods. 
 
