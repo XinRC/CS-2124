@@ -118,7 +118,7 @@ public: // makes the data below public to call/access
         cout << em_name << "'s ID is: " << em_id_number << " and they are in the " << em_department << " department." << endl;
     }
 
-    }
+
 };
 
 int main(){
