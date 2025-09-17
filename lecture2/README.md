@@ -95,10 +95,13 @@ class Employee{
 public: // makes the data below public to call/access  
 
     // Creating a constructor:
-    Employee(string name, string department, int id_number) :name(name) { // the ": name(name)" make it variable name = name
-        name = name; // Because of the earlier statement, we technically don't need to type this.
+    Employee(string name, string department, int id_number) :name(name), department(department), id_number(id_number) {
+        // the ": name(name), department(department), id_number(id_number)" make it so we dont have to type whats below:
+        /*Because of the earlier statement, we technically don't need to type this.
+        name = name; 
         department = department;
         id_number = id_number
+        */
 
         /* Another way of initializing constructor:
          name = (name), department = (department), id_number  = (id_number) {};
