@@ -95,8 +95,8 @@ class Employee{
 public: // makes the data below public to call/access  
 
     // Creating a constructor:
-    Employee(string name, string department, int id_number){
-        name = name;
+    Employee(string name, string department, int id_number) :name(name) { // the ": name(name)" make it variable name = name
+        name = name; // Because of the earlier statement, we technically don't need to type this.
         department = department;
         id_number = id_number
 
