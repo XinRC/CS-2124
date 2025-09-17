@@ -51,7 +51,7 @@ void eating() const {
 ---
 
 ### Overloading Output Operator (<<)
-Adding `friend std::ostream& operator <<(std::ostream& os, const Person& rhs);` into he class would grant the operator `std::ostream& operator <<(std::ostream& os, const Person& rhs){}` function access to private data and members. After, you can create the function either inside or outside the class. This means the follow code overloaded the `<<` method. 
+Adding `friend std::ostream& operator <<(std::ostream& os, const Person& rhs);` into he class would grant the operator `std::ostream& operator <<(std::ostream& os, const Person& rhs){}` function access to private data and members. After, you can create the function either inside or outside the class. This means the follow code overloaded the `<<` method. You can also just define the friend function within the class - but the `friend` keybword must be in the front. 
 
 ```C++
 class ...{
