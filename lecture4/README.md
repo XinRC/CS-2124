@@ -5,10 +5,6 @@
 
 </div> 
 
-> [!Important]
-> - Vectors
-> - Referencing
-
 
 ### Ways to Initialize a Vector:
 
