@@ -13,4 +13,5 @@ The repository includes notes from **CS-UY 2124** lectures.
 - [Lecture 2](https://github.com/XinRC/CS-2124/tree/main/lecture2) |: Functions, Classes, and Parameters
 - [Lecture 3](https://github.com/XinRC/CS-2124/tree/main/lecture3) |: Structures, Encapsulation, Data Hiding
 - [Lecture 4](https://github.com/XinRC/CS-2124/blob/main/lecture4/README.md) |: Vectors and References
+- [Lecture 5](https://github.com/XinRC/CS-2124/blob/main/lecture5/README.md) |: Nesting Classes
 
