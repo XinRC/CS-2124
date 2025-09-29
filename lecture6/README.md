@@ -22,9 +22,9 @@ int* p = &x; // initalize the variable p to the address of x. The * represents t
 ### Const referencing of Pointers 
 The below shows "when and why" to use `const` before a certain keyword. 
 ```C++
-const int* p = &x // this shows that the address for the data "x" will not change
-int* const q = &x // this makes sure that the variable "q" will not change.
-const int* const r = &x // cannot change anything
+const int* p = &x // allows us to change the address ONLY
+int* const q = &x // allows us to change the value at the address ONLY
+const int* const r = &x // cannot change anything 
 ```
 
 ```C++
