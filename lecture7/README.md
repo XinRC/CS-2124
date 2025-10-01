@@ -9,7 +9,7 @@
 > [!important]
 > - Safe printer
 >   - Calling pointers into functions
->   - 'delete' 'new'
+>   - 'delete' 'new' -> dynamic
 >   - (-> what does this do) this access struct/class's attributes using pointers: pointerName -> classAttributename. * is whole object, -> is specific
 >   - smart pointers (unique pointer) -> (auto)
 >   - *cmp(int, int) = &greaterthan (function)
