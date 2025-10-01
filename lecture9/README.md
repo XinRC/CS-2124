@@ -1,6 +1,6 @@
 <div align = "center">
   
-# Lecute 9 
+# Lecture 9 
 ## Copy Control 
 
 </div>
