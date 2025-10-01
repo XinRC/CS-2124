@@ -13,6 +13,8 @@
 >   - What does ? do: if lhs exist, then do what is on the right of ?
 >   - begin()/end()
 >   - array -> using pointers
+>   - move() -> moves smth to case sensitive
+>   - when() -> used for what
 
 
 Copy Control:
