@@ -18,6 +18,7 @@ The repository includes notes from **CS-UY 2124** lectures.
 - [Lecture 7](https://github.com/XinRC/CS-2124/tree/main/lecture7/README.md) |: Pointers 2
 - [Lecture 8](https://github.com/XinRC/CS-2124/tree/main/lecture8/README.md) |: Explict, Deconstructor, and Copying
 - [Lecture 9](https://github.com/XinRC/CS-2124/blob/main/lecture9/README.md) |: Copy Control
+- [Lecture 12](https://github.com/XinRC/CS-2124/tree/main/lecture12/README.md) |: Operator Overloading 
 
 
 > [!Warning]
