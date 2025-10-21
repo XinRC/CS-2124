@@ -22,6 +22,6 @@ The repository includes notes from **CS-UY 2124** lectures.
 - [Lecture 12](https://github.com/XinRC/CS-2124/tree/main/lecture12/README.md) |: Operator Overloading 
 
 
-For the Fall of 2025, the labs completed are in [this](https://github.com/XinRC/CS-2124/tree/main/recitation_labs) folder. 
+For the Fall of 2025, the labs completed are in [this](https://github.com/XinRC/CS-2124/tree/main/recitation) folder. 
 > [!Warning]
 > Each section needs to be reviewed 
