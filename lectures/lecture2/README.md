@@ -12,7 +12,7 @@ Functions behave the same way they do in python. For every function, you must wr
 // Note how since the datatype is "void," we will not be returning anything
 void introducingYourself(string name, int favoriteNumber = 0){
     // Code block
-}
+}cu
 
 ```
 
@@ -76,7 +76,7 @@ int main(){
 ---
 
 ### Classes: 
-Classes allow developers to create **private** datatypes by default. To create a class in C++, just use the `class` keyword and then type the name of the class. There are 3 types of membership, private, public, and protected.
+Classes allow developers to create **private** datatypes by default. This means that any objects outside the class is unable to access anything from the class unless it is specifically stated for an item to be `public`. To create a class in C++, just use the `class` keyword and then type the name of the class. There are 3 types of membership, private, public, and protected.
 
 <div align = "center">
 
