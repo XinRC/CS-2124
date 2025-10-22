@@ -69,14 +69,13 @@ int main() {
     Base b = d;   // Slicing occurs here
     b.identify(); // Outputs: Base
 }
-'''
-
+```
 
 
 ---
 
 ### ⚙️ **Polymorphism**
-```markdown
+markdown
 ## Polymorphism  
 
 ### Definition  
