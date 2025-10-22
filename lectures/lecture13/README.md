@@ -1,7 +1,7 @@
 <div align="center"> 
 
 # Lecture 13
-# Cyclic Association and Seperate Compilation
+# Cyclic Association
 
 </div>
 
