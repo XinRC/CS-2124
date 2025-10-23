@@ -1,4 +1,4 @@
-// Sample 2
+// Sample 1
 
 /*
 Sample code for Functions, Classes, and Parameters.
