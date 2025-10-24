@@ -1,0 +1,27 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
+#include <string>
+#include <iostream>
+#include <vector>
+
+namespace BrooklynPoly {
+
+    class Course;
+
+    class Student {
+        friend std::ostream& operator<<(std::ostream& os, const Student& rhs);
+    public:
+        Student(const std::string& name);
+        const std::string& getName() const;
+        bool addCourse(Course*);
+        void removedFromCourse(Course*);
+
+    private:
+        std::string name;
+        std::vector<Course*> courses;
+    };
+
+} // namespace BrooklynPoly
+
+#endif
