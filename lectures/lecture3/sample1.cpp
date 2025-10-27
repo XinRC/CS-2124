@@ -6,7 +6,6 @@ Structures is an item very similar to that of classes though by default all the 
 */
 
 #include <iostream>
-#include <string>
 using namespace std;
 
 int greatestCommonFactor(int x, int y); // protoype 
