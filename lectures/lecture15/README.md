@@ -49,7 +49,7 @@ int main() {
 
 ### Definition  
 **Object slicing** occurs when a derived object is assigned or copied into a base object.  
-Only the **base portion** of the derived object is copied, while all the extra data or overridden behavior specific to the derived class is lost.
+Only the **base portion** of the derived object is copied, while all the extra data or overridden behavior specific to the derived class is lost. There is something called the **slicing problem**
 
 ### Example  
 ```cpp

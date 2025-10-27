@@ -2,7 +2,7 @@
 
 /*
 Sample code for Functions, Classes, and Parameters.
-Functins, classes, and parameters are relatively the same compared to that of python's. 
+Functions, classes, and parameters are relatively the same compared to that of python's. 
 Though again, before creating a variable, you are required to state the data type of the 
 variable. 
 
