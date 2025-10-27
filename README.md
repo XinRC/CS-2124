@@ -23,6 +23,7 @@ The repository includes notes from **CS-UY 2124** lectures.
 - [Lecture 13](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture13/README.md) |: Cyclic Association
 - [Lecture 14](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture14/README.md) |: Seperate Compilation
 - [Lecture 15](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture15/README.md) |: Inheritance: Substituability, Slicing, and Polymorphism
+- [Lecture 16](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture16/README.md) |: Inheritance: Constructors and Overriding
 
 
 For the Fall of 2025, the labs completed are in [this](https://github.com/XinRC/CS-2124/tree/main/recitation) folder. 
