@@ -55,5 +55,8 @@ For MacOS users:
 g++ -std=c++17 *.cpp -o bin && ./bin 
 
 For Windows users:
-g++ -c *.cpp -o [program name]
+g++ *.cpp -o [executable filename]
+
+# Run the executable
+./[executable filename]
 */
