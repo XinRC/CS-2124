@@ -35,6 +35,12 @@ class Sports : public Car {
         }
 }; // sports 
 
+class Convertible : public Car {
+    private:
+    public:
+        using Car::Car; // this instead of the constructor
+}; // convertible
+
 int main() {
     Sports mercedes_gullwing("Mercedes Gullwing");
     mercedes_gullwing.start_engine();
