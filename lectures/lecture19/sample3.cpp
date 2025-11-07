@@ -2,7 +2,7 @@
 
 /*
 Sample code for Inheritance for Copy Controls.
-
+THe .cpp goes over an exploratory example of copy control
 */
 
 #include <iostream>
@@ -36,8 +36,6 @@ class Camera : public IoT { // works with copy control
             return *this;
         }
         ~Camera() {} // destructor
-
-        // double getPrice() const { return IoT::price; }
 }; // camera
 
 
@@ -56,18 +54,17 @@ class Computer : public IoT {
             return *this;
         }
         ~Computer() {} // destructor
-
 }; // computer 
 
 
 int main() {
-    // Testing Camera class:
+    // === Testing Camera class: ===
     // Camera camera1(600);
     // Camera camera2(500);
     // Camera camera3(camera1); // copy constructor
     // camera1 = camera2; // assignment operator
 
-    // Testing Computer class:
+    // === Testing Computer class: === 
     // Computer computer1(1000, 256);
     // Computer computer2(1500, 512);
     // Computer computer3(computer1); // copy constructor
