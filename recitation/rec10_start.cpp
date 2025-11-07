@@ -1,190 +1,182 @@
 /*
-  Xin
+Xin Rui Chen
   rec10_start.cpp
  */
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 //
 // Put your Instrument Hierachy here
 //
+
+// =======================INSTRUMENT======================= //
 class Instrument {
     private:
-    public:
-        virtual void makeSound() = 0; 
-        virtual void play() = 0; 
-        virtual ostream& display(ostream& os) const = 0;
-        
-        friend ostream& operator<<(ostream& os, const Instrument& instrument) {
-            return instrument.display(os); 
-        }
+    public: 
+        virtual void makeSound() = 0;
+        virtual void play() = 0;
+        virtual void display(ostream& os) const = 0;
 
-        virtual ~Instrument() {}
-}; // instrument
+        friend ostream& operator<<(ostream& os, const Instrument& instr) {
+            instr.display(os);  
+            return os;
+        }     
+}; 
 
-// ==========================BRASS===============================//
+void Instrument::makeSound() { //outside class function
+    cout << "To make a sound..."; 
+}
+
+// =======================BRASS======================= //
 class Brass : public Instrument {
-    protected:
+    private:  
         unsigned mouthpiece;
     public:
         Brass(unsigned mouthpiece) : mouthpiece(mouthpiece) {}
-        void makeSound() {
-            cout << "To make a sound... blow on my mouthpiece of size " << mouthpiece << endl;
+        unsigned getMouthpiece() const { return mouthpiece; }
+        void makeSound() {; 
+            Instrument::makeSound();
+            cout << " blow on a mouthpiece of size " << mouthpiece << endl;
         }
-        ostream& display(ostream& os) const { return os; }
 }; // brass
 
 class Trumpet : public Brass {
     private:
-    public: 
-        using Brass::Brass;
-        ostream& display(ostream& os) const { 
-            os << "Trumpet: " << mouthpiece;
-            return os;
-        }
-        void play() { cout << "Toot"; } 
+    public:
+        using Brass::Brass; 
+        void display(ostream& os) const { cout << "Trumpet: " << getMouthpiece(); }      
+        void play() { cout << "Toot"; }
 }; // brass\trumpet
 
 class Trombone : public Brass {
     private:
     public:
         using Brass::Brass;
-        ostream& display(ostream& os) const {
-            os << "Trombone: " << mouthpiece;
-            return os; 
-        }
+        void display(ostream& os) const { cout << "Trombone: " << getMouthpiece(); } 
         void play() { cout << "Blat"; }
 }; // brass\trombone
 
-// =========================STRING==============================//
+// =======================STRING====================== //
 class String : public Instrument {
-    protected:
+    private:
         unsigned pitch;
     public:
         String(unsigned pitch) : pitch(pitch) {}
         void makeSound() {
-            cout << "To make a sound... bow a string with pitch " << pitch << endl;
+            Instrument::makeSound();
+            cout << " bow a string with pitch" << pitch << endl; 
         }
-        ostream& display(ostream& os) const { return os; }
+        unsigned getPitch() const { return pitch; }
 }; // string
 
 class Violin : public String {
     private:
     public:
         using String::String;
-        ostream& display(ostream& os) const {
-            os << "Violin: " << pitch;
-            return os;
-        }
-        void play() { cout << "Screech"; }
-}; // string\violin 
+        void display(ostream& os) const { cout << "Violin: " << getPitch(); }
+        void play()  { cout << "Screech"; }
+}; // string\violin
 
 class Cello : public String {
     private:
     public:
         using String::String;
-        ostream& display(ostream& os) const {
-            os << "Cello: " << pitch;
-            return os;
-        }
+        void display(ostream& os) const { cout << "Cello: " << getPitch(); }
         void play() { cout << "Squawk"; }
 }; // string\cello
 
-// =======================PERCUSSION===========================//
+// =====================PERCUSSION==================== //
 class Percussion : public Instrument {
     private:
     public:
-        Percussion() {}
+        // Percussion() {}
         void makeSound() {
-            cout << "To make a sound... hit me!" << endl;
+            Instrument::makeSound();
+            cout << " hit me!" << endl; 
         }
-        ostream& display(ostream& os) const { return os; }
 }; // percussion
 
 class Drum : public Percussion {
     private:
     public:
-        using Percussion::Percussion;
-        ostream& display(ostream& os) const {
-            os << "Drum";
-            return os;
-        }
+        // using Percussion::Percussion; // (not necessary)
+        void display(ostream& os) const { cout << "Drum"; }
         void play() { cout << "Boom"; }
-};
+}; // percussion\drum
 
 class Cymbal : public Percussion {
     private:
-    public:
-        using Percussion::Percussion; \
-        ostream& display(ostream& os) const {
-            os << "Cymbal";
-            return os;
-        }
+    public: 
+        // using Percussion::Percussion; // (not necessary)
+        void display(ostream& os) const { cout << "Cymbal"; } 
         void play() { cout << "Crash"; }
-};
-// =======================MILL================================//
+}; //percussion\cymbal
 
+// =======================MILL======================== //
 class MILL {
     private:
         vector<Instrument*> inventory; 
-    public: 
+    public:
+        // output
         MILL() {}
-        //  output operator, deconstructor
-
         void receiveInstr(Instrument& instr) {
             instr.makeSound(); 
 
-            // check for empty slot in inventory 
+            // check if theres an empty space
             for (size_t i = 0; i < inventory.size(); ++i) {
                 if (inventory[i] == nullptr) {
                     inventory[i] = &instr;
                     return;
                 }
             }
-            // if theres none
+            // if not 
             inventory.push_back(&instr); 
         }
-
         Instrument* loanOut() {
-            // check inventory from idx 0 -> size for non nullptr obj
+            // grabs the leftmost item for loan
             for (size_t i = 0; i < inventory.size(); ++i) {
                 if (inventory[i] != nullptr) {
-                    Instrument* loaned = inventory[i];
+                    Instrument* loan = inventory[i];
                     inventory[i] = nullptr;
-                    return loaned;
+                    return loan; 
                 }
-            }
-            return nullptr; 
-        } 
-
+            } return nullptr; 
+        }
         void dailyTestPlay() {
-            for (size_t i = 0; i < inventory.size(); ++i) {
-                if (inventory[i] != nullptr) {
-                    inventory[i]->makeSound(); 
+            // test plays all instr if they arent null
+            for (Instrument* instr : inventory) {
+                if (instr != nullptr) {
+                    instr->makeSound(); 
                 }
             }
         }
 
-        friend ostream& operator<<(ostream& os, const MILL mill) {
-            os << "The MILL has the follow instruments: ";
-            if (mill.inventory.empty()) {
-                os << "None"; 
-                return os; 
-            }
-            cout << endl;
+        friend ostream& operator<<(ostream& os, const MILL& mill) {
+            os << "The MILL has the following instruments: "; 
+
+            cout << endl; 
+            bool found = false; 
             for (Instrument* instr : mill.inventory) {
                 if (instr != nullptr) {
-                    os << "\t" << *instr << endl;     
+                    os << "\t" << *instr << endl; 
+                    found = true;
                 }
             }
+            if (!found) {
+                os << "None";
+                return os; 
+            }
+
             return os; 
-        }
+        };
 
-}; 
 
-// =====================MUSICIAN==============================//
+}; // mill
+
+// =====================MUSICIAN====================== //
 // 
 // Musician class as provided to the students for Parts Two and Three
 // 
@@ -225,7 +217,27 @@ public:
 private:
     Instrument* instr;
     string name;
-};
+}; // musician
+
+// ===================ORCHESTRA==================== //
+class Orch {
+    private:
+        vector<Musician*> musicians;
+    public:
+        // constrctor (not necessary (default), play (DONE) , add musician (DONE), 
+        // Orchestra() {} // not necessary
+        void addPlayer(Musician& musician) {
+            musicians.push_back(&musician); 
+        }
+
+        void play() { // cycle through vector for each musician to play
+            for (Musician* musician : musicians) {
+                musician->play(); 
+            }
+            cout << endl; 
+        }
+}; // orch
+
 
 
 int main()
@@ -271,48 +283,48 @@ int main()
 
     // use the debugger to look at the mill
     cout << "Define the MILL -----------------------------------------------\n";
-    MILL mill;
-    cout << "The MILL before adding instruments:\n" << mill << "\n\n";
+     MILL mill;
+     cout << "The MILL before adding instruments:\n" << mill << "\n\n";
 
     cout << "Put the instruments into the MILL -----------------------------\n";
-    mill.receiveInstr(trpt);
-    mill.receiveInstr(violin);
-    mill.receiveInstr(tbone);
-    mill.receiveInstr(drum);
-    mill.receiveInstr(cello);
-    mill.receiveInstr(cymbal);
-    cout << "\nThe MILL after adding some instruments:\n" << mill << "\n\n";
-
+     mill.receiveInstr(trpt);
+     mill.receiveInstr(violin);
+     mill.receiveInstr(tbone);
+     mill.receiveInstr(drum);
+     mill.receiveInstr(cello);
+     mill.receiveInstr(cymbal);
+     cout << "\nThe MILL after adding some instruments:\n" << mill << "\n\n";
+  
     cout << "Daily test ----------------------------------------------------\n"
          << "dailyTestPlay()" << endl;
-    mill.dailyTestPlay();
+     mill.dailyTestPlay();
     cout << endl;
   
     cout << "Define some Musicians------------------------------------------\n";
-    Musician harpo("Harpo");
-    Musician groucho("Groucho");
+     Musician harpo("Harpo");
+     Musician groucho("Groucho");
   	
     cout << "TESTING: groucho.acceptInstr(mill.loanOut());---------------\n";
-    groucho.testPlay();	
+     groucho.testPlay();	
 
-    groucho.acceptInstr(mill.loanOut());
-    groucho.testPlay();
+     groucho.acceptInstr(mill.loanOut());
+     groucho.testPlay();
 
     cout << "\ndailyTestPlay()" << endl;
-    mill.dailyTestPlay();
+     mill.dailyTestPlay();
     cout << endl;
   
-    groucho.testPlay();	
-    mill.receiveInstr(*groucho.giveBackInstr());
-    harpo.acceptInstr(mill.loanOut());
-    groucho.acceptInstr(mill.loanOut());
-    groucho.testPlay();
-    harpo.testPlay();
+     groucho.testPlay();	
+     mill.receiveInstr(*groucho.giveBackInstr());
+     harpo.acceptInstr(mill.loanOut());
+     groucho.acceptInstr(mill.loanOut());
+     groucho.testPlay();
+     harpo.testPlay();
 
     cout << "\ndailyTestPlay()" << endl;
-    mill.dailyTestPlay();
+     mill.dailyTestPlay();
 
-    cout << "\nThe MILL after giving out some instruments:\n" 
+     cout << "\nThe MILL after giving out some instruments:\n" 
           << mill << "\n\n";
 
     cout << "TESTING: mill.receiveInstr(*groucho.giveBackInstr()); ------\n";
@@ -335,7 +347,7 @@ int main()
     //
     cout << "\nP A R T  T H R E E\n";
     
-    /*
+    
     Musician bob("Bob");
     Musician sue("Sue");
     Musician mary("Mary");
@@ -404,6 +416,9 @@ int main()
     orch.play();
 
     cout << endl << mill << endl;
-    */
+    
 
 } // main
+
+
+
