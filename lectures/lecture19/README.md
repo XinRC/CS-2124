@@ -43,4 +43,4 @@ For inherited copy controls, only a few specific things need to be done for both
 2. Assignment operator for the **derived** class must call the **base** class's assignment operator (yes the base class would need a base assignment operator). This means within the **derived** class's overloading, the **base** class's assignment operator must be ran by using `Base::operator=();`
 3. Destructor would be normal for the **derived** class, however; for the **base** class, the keyword `virtual` must be put in front of it to ensure the **derived** class's destructor also runs.
 
-An example of the topic is listed as sample2.cpp in the directory.
+Examples for this topic is included in: `sample2.cpp` and `sample3.cpp`
