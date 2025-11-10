@@ -31,6 +31,8 @@ This tells C++ that we only want **one** shared instance of the Base0 for Derive
 
 For constructors, likewise the leftmost parent class will be initalized faster than the one to its right. This means for Derived, Base1 will be initalized before Base2. 
 
+However this also means we must initalize all parent/grandparent for the derived class's constructor. Ultimately the rule is to **always** initalized parents and **soemtimes**`virtual` grandparents in the constructor. Aka if you have multiple parents, intialize them, if you have `virtual` grandparents, initalize them, `nonvirtual` grandparents, do NOT initate them. 
+
 
 ### Linked List: Basics:
 
