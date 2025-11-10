@@ -17,7 +17,7 @@ class USMilitary {
     public:
         USMilitary(const string& rank) : rank(rank) {}
         const string& getRank() const { return rank; }
-        virtual void deployment() = 0;
+        virtual void deployment() = 0; // pure virtual function
 }; // USMilitary
 
 void USMilitary::deployment() { cout << "Getting deployed by sea." << endl; } // USMilitary Method
@@ -45,12 +45,16 @@ class Rangers : public Army, public SpecialForces {
         Rangers(const string& rank, string regiment = "75th") 
             : USMilitary(rank), Army(rank, regiment),
                 SpecialForces(rank) {}
-        void deployment() { Rangers::SpecialForces::deployment(); } // calls SpecialForce's deployment method
+        void deployment() { Rangers::SpecialForces::deployment(); } // uses SpecialForce's deployment method
 }; // Rangers 
 
 
 int main() {
     Rangers Alex("Captain", "75th" );
+    Army Jared("Corporal", "101st");
     cout << Alex.getRank() << " of the " << Alex.getRegiment() << " Regiment." << endl; 
     Alex.deployment();
+    cout << endl;
+    cout << Jared.getRank() << " of the " << Jared.getRegiment() << " Regiment." << endl;
+    Jared.deployment();
 } // main
