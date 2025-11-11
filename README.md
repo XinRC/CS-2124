@@ -7,7 +7,7 @@
 
 The repository includes notes from **CS-UY 2124** lectures. 
 
-### Lecutures Table of Contents
+### Lectures Table of Contents
 
 - [Lecture 1](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture1/README.md) |: C++ Basics
 - [Lecture 2](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture2/README.md) |: Functions, Classes, and Parameters
@@ -25,8 +25,12 @@ The repository includes notes from **CS-UY 2124** lectures.
 - [Lecture 15](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture15/README.md) |: Inheritance: Substituability, Slicing, and Polymorphism
 - [Lecture 16](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture16/README.md) |: Inheritance: Constructors and Overriding
 - [Lecture 17](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture17/README.md) |: Inheritance: Abstract, Protected, Hiding
+- [Lecture 18](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture18/README.md) |: Inheritance: Poly / Non-Member, Overloading vs. Overriding
+- [Lecture 19](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture19/README.md) |: Inheritance: Copy Control and Polymorphic Constructors
+- [Lecture 20](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture20/README.md) |: Inheritance: Multiple Inheritances; Linked List: Basics
 
 
-For the Fall of 2025, the labs completed are in [this](https://github.com/XinRC/CS-2124/tree/main/recitation) folder. 
+For the Fall of 2025, the labs completed are in this [folder](https://github.com/XinRC/CS-2124/tree/main/recitation). 
+
 > [!Warning]
-> Each section needs to be reviewed 
+> Lecture notes is still being reviewed and reworked. 

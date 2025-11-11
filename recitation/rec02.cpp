@@ -1,9 +1,3 @@
-/*
-  XC
-  rec02.cpp
-  fall 2024
-*/
-
 #include <iostream>
 #include <vector>
 #include <string>

@@ -1,16 +1,7 @@
-/*
-Xin Rui Chen
-  rec10_start.cpp
- */
-
 #include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
-
-//
-// Put your Instrument Hierachy here
-//
 
 // =======================INSTRUMENT======================= //
 class Instrument {

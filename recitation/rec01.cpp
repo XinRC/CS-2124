@@ -1,10 +1,3 @@
-/*
-  XC
-  rec01.cpp
-  fall 2024
-*/
-
-
 #include <iostream>
 #include <fstream>
 #include <vector>

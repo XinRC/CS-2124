@@ -1,13 +1,3 @@
-/*
-  XC
-  rec07.cpp
-  fall 2024
-
-  CS2124
-  Implement the class Rational, so that the following program works.
-  Remember to submit a file named rec07.cpp
- */
-
 #include <iostream>
 using namespace std;
 

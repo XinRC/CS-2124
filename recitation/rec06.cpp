@@ -1,27 +1,9 @@
-/*
-  XC
-  rec06.cpp
-  fall 2024
- 
-  Focus: Dynamic arrays and copy control
-
-  KEY NOTES:
-  **Entry A pointer to "Entry" that points to Entries
-  unsigned is a (+) int
-
-  Assignment operators::
-  1. free up resources from lhs
-  2. allocate new resources
-  3. copying over data
-  4. return *this ... 
- */
-
 #include <string>
 #include <iostream>
 using namespace std;
 
 // 
-// Position class [DO NOT MOFIDY]]
+// Position class [DO NOT MODIFY]]
 // 
 class Position {
     friend ostream& operator<<(ostream& os, const Position& rhs)

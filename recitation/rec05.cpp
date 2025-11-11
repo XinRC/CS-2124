@@ -1,15 +1,3 @@
-/*
-  XC
-  rec05.cpp
-  fall 2024
-
-  Remember that the file you are to submit should be named rec05.cpp.
-  And YOUR NAME should appear up here in the comment.
-
-  _ delegation: don't return vectors > returned data via output stream
-  _ copy control only needed when using "new" > only once this rec
- */
-
 #include <iostream>
 #include <string>
 #include <vector>

@@ -1,15 +1,3 @@
-// Task 1
-// Who are you? What is this program called?
-
-/*
-  XC
-  rec04.cpp
-  fall 2024
-*/
-
-// I have stopped using cerr in your started code because CLion makes
-// a mess with it.
-
 #include <iostream>   // needed for task 2
 #include <vector>     // needed for task 27
 using namespace std;  // needed for task 2
