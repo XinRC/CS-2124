@@ -19,4 +19,22 @@ Friending for non-member:
 - binary arithmetic are usually not friends
 - two relational operator would be usually implemented as friends (=== and <), but after those two, the others like (!=, <=, etc) would not be.
 
-Conversion operators:
+The list for **method** operators:
+
+- Pre/post increment/decrement (++, --)
+- Assignment (=)
+
+The list for **friend** operators:
+
+- Input/output (<<, >>)
+- Symmetric (==)
+- Add (+)
+- Less than (<)
+
+The list for **outside** operators:
+
+- Arithmetic operators (+, -, *, /)
+- Comparison operators (<=, >=, >)
+- Nonsymmetric (!=)
+
+A good demonstration of which operators to be methods, friends, and functions is in `rec07.cpp`. 
