@@ -41,3 +41,13 @@ There are a few warnings to heed when using pointers - especially with heaps.
 2. Memory leaks are horrible - it takes up a lot of space in the heap - never lose the address of an item on the heap. This means to make sure to keep a pointer pointing at the address and make sure to delete the item in the heap when you are done with it.
 3. If a pointer is pointing at an item that no longer exist in the heap, be sure to set the pointer equal to `nullptr`.
 4.  It is advised to not use multiple (2+) pointers pointing at the same memory address.  
+
+
+### Smart Pointers 
+
+Instead of using the tedious regular pointers for dynamic memory management, the new and safer way of working with pointers is through the use of "smart pointers." There are three types of smart pointers, `unique_ptr`, `shared_ptr`, and `weak_ptr` - though we will only focus on `unique_ptr` since it is most like the generic pointers we will be working with. Do note for smart pointers, you must also have the header for it: `#include <memory>` to be able to use them. 
+
+Smart pointers automatically prevent memory leaks and make memory management much safer. For the case of `unique_ptr`, it is an **exclusive** ownership (only one pointer can own that memory), and it cannot be copied. Like any other smart pointer, it is automatically deleted when it is out of scope. The syntax for the unique pointer is:
+`unique_ptr<DataType> variableName = make_unique<DataType>(Parameters);`
+
+Just to briefly go over `shared_ptr`, unlike the `unique_ptr`, multiple pointers can own the same object and it is only automatically deleted when the last shared_ptr is detroyed - likewise is **is** copyable. For the shared pointer, the syntax is: `shared_ptr<DataType> variableName = make_shared<DataType>(Parameters);`
