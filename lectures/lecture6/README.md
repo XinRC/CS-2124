@@ -7,7 +7,7 @@
 
 
 ### Pointers
-Pointers are variables that point at a specific memory address. By having access to the memory address, we are also able to access the value in the memory address. Do note that pointers are **type** sensitive, this means that if the memory address of variale `x` is a string, then the pointer must also be initialized as a string. If a pointer is not pointing anywhere, it is good practice to assign it as `nullptr`. 
+Pointers are variables that point at a specific memory address. By having access to the memory address, we are also able to access the value in the memory address. Do note that pointers are **type** sensitive, this means that if the memory address of variable `x` is a string, then the pointer must also be initialized as a string. If a pointer is not pointing anywhere, it is good practice to assign it as `nullptr`. 
 
 <div align = "center">
 
@@ -90,4 +90,4 @@ Other names for it includes: "heap" or "free store", and it is a part of the mem
 ---
 
 ### Filling Vector Using Pointers
-The [site](https://cse.engineering.nyu.edu/jsterling/cs2124/LectureNotes/03.Pointers.html#this) offers an easly comprehension on how to correctly fill vectors using pointers.
+The [site](https://cse.engineering.nyu.edu/jsterling/cs2124/LectureNotes/03.Pointers.html#this) offers an easly comprehension on how to correctly fill vectors using pointers (with dynamic heap)

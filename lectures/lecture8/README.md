@@ -61,8 +61,4 @@ For regular item pointers like: pointer = int(5), we would just use the regular 
 ### Shallow vs. Deep Copy
 To put it simply, a shallow copy is creating a shortcut to the original folder while a deep copy is creating a complete new duplicate of file. Shallow copy is like python's `alias` while deep copy is the actual duplication, similar to python's `deepcopy.copy()`. Often times, deepcopies are considered better than it's shallow counterpart. 
 
-
-</br>
-
-### Copy by Construct vs Copy by Assignment
-
+For a demonstration of  `destructors`, and copying methods in action, check the lecture 9 directory.  
