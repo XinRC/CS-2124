@@ -22,14 +22,17 @@ using namespace std;
 // ============================SURVIVOR CLASS============================ //
 class Survivor {
     private:
+        string name; 
         string survivor_class; 
+        double max_health;
         double health; 
-        bool is_injured; 
+        bool health_full = true; 
+        bool is_head = false; 
         vector<Weapon*> inventory;
 
     public:
-        Survivor(const string& survivor_class, double health = 100) 
-            : survivor_class(survivor_class), health(health), is_injured(false) {}
+        Survivor(const string& name, const string& survivor_class, double max_health) 
+            : name(name), survivor_class(survivor_class), health(max_health), max_health(max_health) {}
 
         // big three:
         ~Survivor() {
@@ -40,15 +43,23 @@ class Survivor {
             inventory.clear();
         }
         Survivor(const Survivor& other) 
-            : survivor_class(other.survivor_class), health(other.health), 
-                is_injured(false) {}
+            : name(other.name), survivor_class(other.survivor_class), health(other.health), max_health(other.max_health) {}
         Survivor& operator=(const Survivor& other) {
             if (this != &other) {
+                name = other.name; 
                 survivor_class = other.survivor_class; 
                 health = other.health;
-                is_injured = false; 
+                max_health = other.max_health; 
             } return *this; 
         }
+        
+        // getters / setters
+        bool is_health_full() const { return health_full; } // future: make it a pure virtual 
+        double get_max_health() const { return max_health; }
+        double get_health() const { return health; }
+        void set_health(double amount) { health = amount; } 
+
+
         // methods: (attacking), holdfast/charge/ lose health
 
         void loseHealth(double health_deduction) { health - health_deduction; }
@@ -57,28 +68,43 @@ class Survivor {
 
 class Infantry : public Survivor {
     public:
-        using Survivor::Survivor; 
+        Infantry(const string& name) : Survivor(name, "Infantry", 110) {}
 }; // infantry 
 
 class Officer : public Survivor {
     public:
-        using Survivor::Survivor; 
+        Officer(const string& name) : Survivor(name, "Officer", 110) {}
         // charging 
 }; // officer
 
 class Seaman : public Survivor {
     public:
-        using Survivor::Survivor; 
+        Seaman(const string& name) : Survivor(name, "Seaman", 100) {}
 }; // seaman
 
 class Medic : public Survivor {
     private: 
-
+        double supplies_amount = 400; 
+        const double max_supplies_amount = 400;
     public:
-        using Survivor::Survivor; 
-        // get supplies 
+        Medic(const string& name) : Survivor(name, "Medic", 90) {}
+        void get_supplies(double amount) { supplies_amount += amount; } // allows suregon to get supplies
         // heal 
-
+        void healing_survivor(Survivor& survivor) { // healing survivor
+            if (survivor.is_health_full()) {
+                return;
+            }
+            double needed_health = survivor.get_max_health() - survivor.get_health();
+            if (supplies_amount != 0) {
+                if (supplies_amount > needed_health) {
+                    supplies_amount -= needed_health;
+                    survivor.set_health(survivor.get_max_health());
+                } else if (supplies_amount < needed_health) {
+                    survivor.set_health(survivor.get_health() + supplies_amount);
+                    supplies_amount = 0; 
+                }
+            }
+        }
 }; // medic 
 
 // ============================WEAPON CLASS============================ //
@@ -114,6 +140,7 @@ class Melee : public Weapon {
 class Zombie {
     private:
         string zombie_name;
+        double max_health; 
         double health;
         double damage_inflicted;
     public:

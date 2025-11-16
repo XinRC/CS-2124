@@ -28,6 +28,8 @@ void Name::displayText() const { cout << "Text" << endl; }
 
 
 ### Namespaces 
-Namespaces can be considered as containers. Suppose within a program, there is two functions named the same thing - by using a namespace for it, we can keep the same
+Namespaces can be considered as containers. Suppose within a program, there is two functions named the same thing - by using a namespace for it, we can keep the same function name for them but specify the namespace for which the program resides in. To call a method that reside in a namespace, there are a few methods:
 
-Namespaces allow for two or more entities to have the same namespace.
+- `using namespace [Namespace Name]` - in the global scope would provide a broader scope for the namespace to be used.
+- `using namespace [Namespace Name]` - in a function scope would provide a limited scope for the namespace to be used.
+- `[Namespace Name]::[Function Name]` - is the most explicit option, allowing you to specify which function of which namespace you want to use. 
