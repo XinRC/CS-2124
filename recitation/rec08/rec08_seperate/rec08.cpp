@@ -49,8 +49,6 @@ int main() {
 /*
 Make sure you are in the rec08 directory (folder) before running the code. 
 
-
-
 For MacOS users:
 g++ -std=c++17 *.cpp -o bin && ./bin 
 

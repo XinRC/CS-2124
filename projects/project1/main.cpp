@@ -11,7 +11,7 @@ Future Scaling:
 - INVENTORY:
     Deployables, 
 - GENERAL:
-    Random Map Generator
+    Random map generator, random miss chance (gun)
 */ 
 
 #include <iostream>
@@ -21,13 +21,14 @@ using namespace std;
 
 // ============================SURVIVOR CLASS============================ //
 class Survivor {
+    // outstream (class:name - health/maxhealth)
     private:
         string name; 
         string survivor_class; 
         double max_health;
         double health; 
         bool health_full = true; 
-        bool is_head = false; 
+        bool is_alive = true; 
         vector<Weapon*> inventory;
 
     public:
@@ -59,11 +60,14 @@ class Survivor {
         double get_health() const { return health; }
         void set_health(double amount) { health = amount; } 
 
-
-        // methods: (attacking), holdfast/charge/ lose health
-
-        void loseHealth(double health_deduction) { health - health_deduction; }
-
+        // methods: (attacking -> weapon class), charge
+        void loseHealth(double health_deduction) { health - health_deduction; } // [M] heath deduction
+        void attack(Weapon& weapon, Zombie& zombie) {
+            if(is_alive) {
+                zombie.take_damage(weapon.doDamage());
+                return;
+            }
+        }
 }; // survivor 
 
 class Infantry : public Survivor {
@@ -72,9 +76,27 @@ class Infantry : public Survivor {
 }; // infantry 
 
 class Officer : public Survivor {
+    private: 
+        const int charging_queue = 5;
+        int current_charge_amount = 0;
     public:
         Officer(const string& name) : Survivor(name, "Officer", 110) {}
-        // charging 
+        void gain_charge() { // [M] gain +1 charge point
+            if (current_charge_amount < charging_queue) {
+                current_charge_amount += 1; 
+                return;
+            }
+            return;
+        }
+        double start_charge() { 
+            if (current_charge_amount == charging_queue) {
+                cout << "\t Charging!!" << endl;
+                current_charge_amount = 0;
+                return 1.50; 
+            }
+            return 1; 
+        }
+
 }; // officer
 
 class Seaman : public Survivor {
@@ -84,13 +106,12 @@ class Seaman : public Survivor {
 
 class Medic : public Survivor {
     private: 
-        double supplies_amount = 400; 
+        double supplies_amount; 
         const double max_supplies_amount = 400;
     public:
-        Medic(const string& name) : Survivor(name, "Medic", 90) {}
-        void get_supplies(double amount) { supplies_amount += amount; } // allows suregon to get supplies
-        // heal 
-        void healing_survivor(Survivor& survivor) { // healing survivor
+        Medic(const string& name) : Survivor(name, "Medic", 90), supplies_amount(max_supplies_amount) {}
+        void get_supplies(double amount) { supplies_amount += amount; } // [M] get supplies
+        void healing_survivor(Survivor& survivor) { // [M] heal survivor
             if (survivor.is_health_full()) {
                 return;
             }
@@ -102,13 +123,14 @@ class Medic : public Survivor {
                 } else if (supplies_amount < needed_health) {
                     survivor.set_health(survivor.get_health() + supplies_amount);
                     supplies_amount = 0; 
-                }
+                } 
             }
         }
 }; // medic 
 
 // ============================WEAPON CLASS============================ //
 class Weapon {
+    // outstream: (gun name, damage, reload sec)
     private:
         string weapon_name; 
         double damage; 
@@ -122,7 +144,7 @@ class Gun : public Weapon {
     private:
         bool shoot_twice;
         double reload_speed;
-    public:
+    public: // shoot + reload, check stats, 
         Gun(const string& name, double damage, bool reload_speed, bool shoot_twice = false) 
             : Weapon(name, damage), reload_speed(reload_speed), shoot_twice(shoot_twice) {}
 }; // gun
@@ -133,16 +155,18 @@ class Melee : public Weapon {
     public:
         Melee(const string& name, double damage, bool can_hold = false ) 
             : Weapon(name, damage), can_hold_fast(can_hold) {}
-}; 
+}; // melee
 
 // ============================ZOMBIE CLASS=========================== //
 // Zombie Class -> Shambler, Runner, Bomber
 class Zombie {
+    // output stream (name: health/maxhealth)
     private:
         string zombie_name;
         double max_health; 
         double health;
         double damage_inflicted;
+        bool is_alive = true;
     public:
         Zombie(const string& name, double damage, double health = 0)
             : zombie_name(name), damage_inflicted(damage) {}
@@ -155,6 +179,9 @@ class Zombie {
             zombie_name = other.zombie_name;
             damage_inflicted = other.damage_inflicted; 
         }
+
+        // take damage, attack -> pure virtual (grab, bomb, tackle)
+        void take_damage(float damage) { health -= damage; }
 }; // zombie
 
 class Shambler : public Zombie {
