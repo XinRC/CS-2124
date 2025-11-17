@@ -33,3 +33,5 @@ Namespaces can be considered as containers. Suppose within a program, there is t
 - `using namespace [Namespace Name]` - in the global scope would provide a broader scope for the namespace to be used.
 - `using namespace [Namespace Name]` - in a function scope would provide a limited scope for the namespace to be used.
 - `[Namespace Name]::[Function Name]` - is the most explicit option, allowing you to specify which function of which namespace you want to use. 
+
+An example of namespaces wis shown in lecture's 14's notes. 
