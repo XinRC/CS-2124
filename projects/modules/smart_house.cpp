@@ -4,33 +4,84 @@
 using namespace std;
 
 class Device { 
+    private:
+        string name;
+        string room;
+    public:
+        Device(const string& name, const string& room) 
+            : name(name), room(room) {}
+        const string& get_room() const { return room; }
+        const string& get_name() const { return name; }
 };
 
 class Connectable {
-
+    private:
+        bool connected;
+    public:
+        Connectable() : connected(false) {}
+        // getter / setters
+        void set_connected(bool connect) { 
+            if (connect == true) { connected = true; } 
+            else { connected = false; }}
+            
 };
 
 class PowerManageable {
-
+    private:
+        bool turned_on;
+    public:
+        PowerManageable() : turned_on(false) {}
+        void set_turn_on(bool turn_on) {
+            if (turn_on == true) { turned_on = true;}
+            else { turned_on = false; }}
  };
 
 class SmartLight : public Device, public Connectable, public PowerManageable {
-
+    public:
+        using Device::Device;
 };
 
 class SmartOutlet : public Device, public PowerManageable {
-
+    public:
+        using Device::Device;
 };
 
 class SmartSpeaker : public Device, public Connectable {
-
+    public:
+        using Device::Device;
  };
 
 class SmartHome {
     private:
-    public: // addDevice, displayAllDevices, connectDevice, turnOnDevice, displayAllDevices, disconnectAllDevices, turnoffDevice, 
+        vector<Device*> smart_home_network; 
+    public: // displayAllDevices, connectDevice, turnOnDevice, displayAllDevices, disconnectAllDevices, turnoffDevice, 
+        SmartHome() {}
+        ~SmartHome() {
+            for (size_t i = 0; i < smart_home_network.size(); ++i) {
+                delete smart_home_network[i];
+            }
+            smart_home_network.clear();
+        }
+        
+        void displayAllDevice() {
+            cout << "DEVICES: " << endl; 
+            for(Device* device : smart_home_network) {
 
- };
+            }
+        }
+
+        void addDevice(Device* device) {
+            smart_home_network.push_back(device);
+        }
+
+        void connectDevice(const string& room) {
+            for (Device* device : smart_home_network) {
+                if (room == device->get_room()) {
+                    cout << device->get_name() << 
+                }
+            }
+        }
+};
 
 int main() {
     SmartHome home;
