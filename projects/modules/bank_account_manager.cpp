@@ -39,8 +39,3 @@ int main() {
     
     return 0;
 }
-
-/*
-Alice's balance: $700
-Bob's balance: $800
-*/
