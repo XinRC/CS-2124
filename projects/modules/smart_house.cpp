@@ -1,3 +1,7 @@
+/*
+smart_house.cpp focuses on the use of multiple inheritance to interact with smart devices
+of a home. 
+*/
 #include <iostream>
 #include <vector>
 #include <string>

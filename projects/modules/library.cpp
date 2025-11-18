@@ -1,3 +1,7 @@
+/*
+library.cpp is a library_database holder, holding books and members who are able to interact 
+with the books. 
+*/
 #include <iostream>
 #include <vector>
 #include <string>

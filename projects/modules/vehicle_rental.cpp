@@ -1,3 +1,6 @@
+/*
+vehicle_rental.cpp is a basic car-lend-borrow database program with class inheritance. 
+*/
 #include <iostream>
 #include <vector>
 #include <string>
