@@ -1,5 +1,6 @@
 /*
-employee_management.cpp utilizes dynamic pointers and 
+employee_management.cpp utilizes dynamic pointers implemention to keep a databasse of employees and their roles
+(along with other valuable data)
 */
 #include <iostream>
 #include <vector>
