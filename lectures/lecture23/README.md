@@ -88,7 +88,6 @@ try {
 }
 ```
 
-
 ### Generic Algorithms
 
 The generic algorithms provides us algorithms that we would otherwise have to code ourselves, such algorithm for sorting, searching, and making modification. Some algorithms will be discussed below.
