@@ -30,6 +30,8 @@ The repository includes notes from **CS-UY 2124** lectures.
 - [Lecture 20](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture20/README.md) |: Inheritance: Multiple Inheritances; Linked List: Basics
 - [Lecture 21](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture20/README.md) |: More Linked List
 - [Lecture 22](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture22/README.md) |: Vector Iterators
+- [Lecture 23](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture23/README.md) |: Standard Template Library, Constant Vector Iterators, and Templates
+- [Lecture 24](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture23/README.md) |: Standard Template Library
 
 
 For the Fall of 2025, the labs completed are in this [folder](https://github.com/XinRC/CS-2124/tree/main/recitation). 
