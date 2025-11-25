@@ -1,4 +1,4 @@
-// Side Project 1:
+// Side Project:
 
 /*
 Guts and Blackpowder through pure code. 
