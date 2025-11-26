@@ -5,7 +5,6 @@ The .cpp will look into the implementation of a linked list class
 */
 #include <iostream>
 
-
 class LinkedList {
     private:
         struct Node {
