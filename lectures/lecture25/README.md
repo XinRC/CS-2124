@@ -1,6 +1,6 @@
 <div align = "center">
 
-# Lecture 24
+# Lecture 25
 ## Recursion
 
 </div>
