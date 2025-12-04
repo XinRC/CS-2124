@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "sample1.h"
+#include "vehicle.h"
 using namespace std;
 
 namespace Land_Vehicle_Namespace {
