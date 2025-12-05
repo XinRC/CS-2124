@@ -32,7 +32,8 @@ The repository includes notes from **CS-UY 2124** lectures.
 - [Lecture 22](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture22/README.md) |: Vector Iterators
 - [Lecture 23](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture23/README.md) |: Standard Template Library, Constant Vector Iterators, and Templates
 - [Lecture 24](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture23/README.md) |: Standard Template Library
-- [Lecture 25-26](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture25/README.md) |: Recursion
+- [Lecture 25](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture25/README.md) |: Recursion
+- [Lecture 26](https://github.com/XinRC/CS-2124/blob/main/lectures/lecture26/README.md) |: Exception Handling
 
 
 For the Fall of 2025, the labs completed are in this [folder](https://github.com/XinRC/CS-2124/tree/main/recitation). 
