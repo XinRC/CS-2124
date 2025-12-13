@@ -1,5 +1,3 @@
-// Sample 1
-
 /*
 The .cpp will look into the implementation of a linked list class
 */
@@ -23,7 +21,4 @@ class LinkedList {
             Node* header = new Node(0, nullptr, trailer);
             Node* trailer = new Node(0, header, nullptr);
         }
-        // methods: 
-
-
 };
