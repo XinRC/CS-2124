@@ -20,7 +20,7 @@ class GradeBook{
                sum += values;  
             } return (sum / grades.size());           
         } 
-    // Count grades matching predicate
+
     int countIf(function<bool(int)> predicate) const {
         int count = 0;
         for (int grade : grades) {
